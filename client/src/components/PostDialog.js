@@ -91,10 +91,13 @@ export default function PostDialog({dialogOpen, showEditProjectDialog}) {
     }
 
     let onEditorStateChange = (e) => {
+        let tempProjectData = null;
+        let formattedProjectData = null;
         setEditorState(e);
         if(editorState){
-            setProjectData(stateToHTML(editorState.getCurrentContent()));
-            console.log("State: ", projectData);
+            tempProjectData = stateToHTML(editorState.getCurrentContent());
+            formattedProjectData = tempProjectData.replace(/href/g, "target='_blank' href");
+            setProjectData(formattedProjectData.toString());
         }
     };
 
