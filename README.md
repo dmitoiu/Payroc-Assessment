@@ -47,7 +47,7 @@ cd server
 npm run start
 
 cd client
-npm run dev
+npm run start
 ```
 
 #### Build Instructions
