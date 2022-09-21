@@ -1,15 +1,14 @@
 import React, {useEffect, useState} from 'react';
 import { LockClosedIcon, ExclamationIcon} from '@heroicons/react/solid';
-import {useRouter} from "next/router";
+import {useLocation} from "react-router-dom";
 import auth from "../helpers/authHelper";
 import {useDispatch} from "react-redux";
 import {useSelector} from "react-redux";
 import {logIn} from "../actions/authActions";
-import Image from "next/image";
 import logo from "../resources/images/dmitoiu_portfolio-dark.png";
 
 const LoginForm = () => {
-    let history = useRouter();
+    let history = useLocation();
     const initialState = {email: "", password: ""};
     // Create form data state
     const [formData, setFormData] = useState(initialState);
@@ -67,7 +66,7 @@ const LoginForm = () => {
             <div className="min-h-full flex items-center justify-center py-32 px-4 sm:px-6 lg:px-8">
                 <div className="max-w-md w-full space-y-8">
                     <div className={"grid justify-items-center"}>
-                        <Image
+                        <img
                             className="mx-auto h-12 w-auto"
                             src={logo}
                             alt="Portfolio"

@@ -24,8 +24,6 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-
 app.use('/api/accounts', usersRouter);
 app.use('/api/posts', postsRouter);
 
@@ -37,10 +35,13 @@ app.use('/api/posts', postsRouter);
  */
 if(process.env.NODE_ENV === "production"){
     // Use client build as static files
-    app.use(express.static(path.join(path.resolve(), "/client/build")));
+    console.log("PRODUCTION!");
+    app.use(express.static(path.join(path.resolve(), "/client/.next")));
+    var pathTest = path.resolve(path.resolve(), "client", ".next", "server", "pages", "index.html");
+    console.log("Test: ", pathTest);
     app.get("*", (req, res) => {
         // Send client build index.html file
-        res.sendFile(path.resolve(path.resolve(), "client", "build", "index.html"))
+        res.sendFile(path.resolve(path.resolve(), "client", ".next", "server", "pages", "index.html"))
     })
 } else {
     app.use(express.static(path.join(__dirname, 'public')));

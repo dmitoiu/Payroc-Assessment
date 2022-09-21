@@ -2,11 +2,11 @@ import React, {useEffect} from 'react';
 import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import {CheckIcon, ClipboardIcon, ShareIcon} from '@heroicons/react/24/outline'
-import {useRouter} from "next/router";
+import {useLocation} from "react-router-dom";
 
 export default function ShareDialog({dialogOpen, showShareProjectDialog}) {
     const [open, setOpen] = useState(true);
-    const location = useRouter();
+    const location = useLocation();
     let backButtonRef = React.createRef();
 
     if(location.pathname === "/"){

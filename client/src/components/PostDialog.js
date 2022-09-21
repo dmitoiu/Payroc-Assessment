@@ -1,13 +1,10 @@
 import React, {Fragment, useEffect, useRef, useState} from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { PencilSquareIcon } from '@heroicons/react/24/outline';
-import dynamic from 'next/dynamic';
 import {useDispatch, useSelector} from "react-redux";
 import { stateToHTML} from 'draft-js-export-html';
-const Editor = dynamic(
-    () => import('react-draft-wysiwyg').then(mod => mod.Editor),
-    { ssr: false }
-);
+import {Editor} from "react-draft-wysiwyg";
+import {EditorState} from "draft-js";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import {addPost, getPosts} from "../actions/postActions";
 import {ExclamationCircleIcon} from "@heroicons/react/20/solid";
@@ -49,9 +46,7 @@ export default function PostDialog({dialogOpen, showEditProjectDialog}) {
     const [errorData, setErrorData] = useState(errorState);
     const [errorDataValues, setErrorDataValues] = useState(errorStateValues);
 
-    let initialProjectState = "";
-
-    let [projectData, setProjectData] = useState(initialProjectState);
+    let [projectData, setProjectData] = useState("");
 
     useEffect(() => {
         setEditorMount(true);
@@ -61,14 +56,14 @@ export default function PostDialog({dialogOpen, showEditProjectDialog}) {
         await dispatch(addPost(formData.postTitle, projectData));
         clearPost();
         await dispatch(getPosts());
-        showEditProjectDialog(false)
+        showEditProjectDialog(false);
     }
 
     let clearPost = () => {
         setFormData({ ... formData, ["postTitle"]: ""});
-        setEditorState("");
+        setEditorState( EditorState.createEmpty())
         if(editorState){
-            setProjectData("initialProjectState");
+            setProjectData("");
         }
     }
 

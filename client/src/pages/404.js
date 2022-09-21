@@ -1,6 +1,6 @@
-import Link from "next/link";
+import {Link} from "react-router-dom";
 
-export default function Example() {
+export default function NotFound() {
     return (
         <>
             <main
@@ -16,7 +16,7 @@ export default function Example() {
                         It looks like the page you’re looking for does not exist.
                     </p>
                     <div className="mt-6">
-                        <Link href="/">
+                        <Link to="/">
                             <a
                                 className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-black text-opacity-75 bg-white bg-opacity-75 sm:bg-opacity-25 sm:hover:bg-opacity-50"
                             >

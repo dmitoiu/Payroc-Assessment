@@ -16,7 +16,6 @@ var mongoose = require("mongoose");
  */
 const addPost = async (req, res) => {
     try{
-        console.log("Req: ", req);
         const title = req.body.title;
         const content = req.body.content;
         const members =
