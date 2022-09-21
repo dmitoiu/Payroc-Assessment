@@ -1,3 +1,3 @@
-## LCG - Software Developer Assessment
+## Payroc - Software Developer Assessment
 
 ## Darie-Dragoș Mitoiu
