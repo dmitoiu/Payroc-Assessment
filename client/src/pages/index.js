@@ -34,10 +34,10 @@ import {useDispatch, useSelector} from "react-redux";
 import Helmet from "react-helmet";
 
 const user = {
-    name: 'Chelsea Hagon',
-    email: 'chelsea.hagon@example.com',
+    name: 'Darie-Dragoș Mitoiu',
     imageUrl:
-        'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    href: '#',
 }
 const navigation = [
     { name: 'Home', href: '#', icon: HomeIcon, current: true },
@@ -86,16 +86,14 @@ const questions = [
     },
     // More questions...
 ]
-const whoToFollow = [
-    {
-        name: 'Leonard Krasner',
-        handle: 'leonardkrasner',
-        href: '#',
-        imageUrl:
-            'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
-    // More people...
-]
+const whoToFollow = [{
+    name: 'Chelsea Hagon',
+    email: 'chelsea.hagon@example.com',
+    handle: 'chelseaHagon',
+    href: '#',
+    imageUrl:
+        'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+}];
 const trendingPosts = [
     {
         id: 1,
