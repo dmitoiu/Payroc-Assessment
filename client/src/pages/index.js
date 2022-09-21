@@ -439,7 +439,7 @@ export default function Home() {
                                                             </p>
                                                             <p className="text-sm text-gray-500">
                                                                 <a href={question.href} className="hover:underline cursor-default">
-                                                                    <time dateTime={question.createdAt}>{format(parseISO(question.createdAt), "dd.MM.yyyy")}</time>
+                                                                    <time dateTime={question.createdAt}>{format(parseISO(question.createdAt), "dd MMMM yyyy hh:mm:ss")}</time>
                                                                 </a>
                                                             </p>
                                                         </div>
