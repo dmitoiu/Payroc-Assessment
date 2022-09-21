@@ -35,13 +35,10 @@ app.use('/api/posts', postsRouter);
  */
 if(process.env.NODE_ENV === "production"){
     // Use client build as static files
-    console.log("PRODUCTION!");
-    app.use(express.static(path.join(path.resolve(), "/client/.next")));
-    var pathTest = path.resolve(path.resolve(), "client", ".next", "server", "pages", "index.html");
-    console.log("Test: ", pathTest);
+    app.use(express.static(path.join(path.resolve(), "/client/build")));
     app.get("*", (req, res) => {
         // Send client build index.html file
-        res.sendFile(path.resolve(path.resolve(), "client", ".next", "server", "pages", "index.html"))
+        res.sendFile(path.resolve(path.resolve(), "client", "build", "index.html"));
     })
 } else {
     app.use(express.static(path.join(__dirname, 'public')));

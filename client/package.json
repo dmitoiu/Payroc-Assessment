@@ -1,5 +1,5 @@
 {
-  "name": "lcg-client",
+  "name": "payroc-client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
